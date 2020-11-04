@@ -27,41 +27,41 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Base Layer: COLEMAK
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |RAIS/ESC|   Q  |   W  |   F  |   P  |   B  |                              |   J  |   L  |   U  |   Y  | ;  : |  Play  |
+ * |ESC     |   Q  |   W  |   F  |   P  |   B  |                              |   J  |   L  |   U  |   Y  | ;  : |  Play  |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |Ctrl/BS |   A  |   R  |   S  |   T  |   G  |                              |   M  |   N  |   E  |   I  |   O  |  ' "   |
+ * | LCtrl  |   A  |   R  |   S  |   T  |   G  |                              |   M  |   N  |   E  |   I  |   O  |  ' "   |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   D  |   V  |LShift|LShift|  |LShift|LShift|   K  |   H  | ,  < | . >  | /  ? |  - _   |
+ * | LShift |   Z  |   X  |   C  |   D  |   V  |LShift|   \  |  |   \  |LShift|   K  |   H  | ,  < | . >  | /  ? |  - _   |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | GUI  | Del  | Enter| Space| Esc  |  | Enter| Space| Tab  | Bksp | AltGr|
- *                        |      |      | Alt  | Lower| Raise|  | Lower| Raise|      |      |      |
+ *                        | Alt  | Del  | GUI  | Bksp | Esc  |  | Enter| Space|LShift| Tab  | AltGr|
+ *                        |      |      |      | Lower| Raise|  | Raise| Lower|      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_COLEMAK] = LAYOUT(
-      LT(_RAISE, KC_ESC),      KC_Q,   KC_W,   KC_F,   KC_P,   KC_B,                                         KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_MPLY,
-      MT(MOD_LCTL, KC_BSPC),   KC_A,   KC_R,   KC_S,   KC_T,   KC_G,                                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
-      KC_LSFT,                 KC_Z,   KC_X,   KC_C,   KC_D,   KC_V,   KC_LSFT,   KC_LSFT, KC_LSFT, KC_LSFT, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_MINS,
-              KC_LGUI, KC_DEL, MT(MOD_LALT, KC_ENT), LT(_LOWER, KC_SPC), LT(_RAISE, KC_ESC), LT(_LOWER, KC_ENT), LT(_RAISE, KC_SPC), KC_TAB,  KC_BSPC, KC_RALT
+      KC_ESC,   KC_Q,   KC_W,   KC_F,   KC_P,   KC_B,                                         KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_MPLY,
+      KC_LCTL,  KC_A,   KC_R,   KC_S,   KC_T,   KC_G,                                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
+      KC_LSFT,  KC_Z,   KC_X,   KC_C,   KC_D,   KC_V,   KC_LSFT,   KC_BSLS, KC_BSLS, KC_LSFT, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_MINS,
+              KC_LALT, KC_DEL, KC_LGUI, LT(_LOWER, KC_BSPC), LT(_RAISE, KC_ESC), LT(_RAISE, KC_ENT), LT(_LOWER, KC_SPC), KC_LSFT,  KC_TAB, KC_RALT
     ),
 /*
  * Lower Layer: Symbols
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |  !   |  @   |  {   |  }   |  |   |                              |      |  7   |  8   |  9   |      |        |
+ * |        |  !   |  @   |  {   |  }   |  |   |                              |   *  |  7   |  8   |  9   |      |        |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |        |  #   |  $   |  (   |  )   |  `   |                              |   +  |  4   |  5   |  6   |  %   |  ' "   |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |  %   |  ^   |  [   |  ]   |  ~   |      |      |  |      |      |   &  |  1   |  2   |  3   |  =   | - _    |
+ * | Caps   |  %   |  ^   |  [   |  ]   |  ~   |      |      |  |      |      |   &  |  1   |  2   |  3   |  =   | - _    |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |  ;   |  =   |  |  =   |  ;   |      |   .  |   0  |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_LOWER] = LAYOUT(
-      _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_PIPE,                                     _______, KC_7,    KC_8,    KC_9, _______, _______,
+      _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_PIPE,                                     KC_PAST, KC_7,    KC_8,    KC_9, _______, _______,
       _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV,                                      KC_PLUS, KC_4,    KC_5,    KC_6, KC_PERC, KC_QUOT,
-      _______, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, _______, _______, _______, _______, KC_AMPR, KC_1,    KC_2,    KC_3,    KC_EQL,  KC_MINS,
-                                 _______, _______, _______, KC_SCLN, KC_EQL,  KC_EQL,  KC_SCLN, _______, _______, KC_0
+      KC_CAPS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, _______, _______, _______, _______, KC_AMPR, KC_1,    KC_2,    KC_3,    KC_EQL,  KC_MINS,
+                                 _______, _______, _______, KC_SCLN, KC_EQL,  KC_EQL,  KC_SCLN, _______, KC_DOT,  KC_0
     ),
 /*
  * Raise Layer: Number keys, media, navigation
@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |        |   1  |  2   |  3   |  4   |  5   |                              |  6   |  7   |  8   |  9   |  0   |        |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |      | Prev | Play | Next | VolUp|                              | Left | Down | Up   | Right|      |        |
+ * |        |      |      | Play | Prev | Next |                              | Left | Down |  Up  | Right|      |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * |        |      |      |      | Mute | VolDn|      |      |  |      |      | MLeft| Mdown| MUp  |MRight|      |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
@@ -78,8 +78,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_RAISE] = LAYOUT(
-      _______, KC_1, 	  KC_2,    KC_3,    KC_4,    KC_5,                                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-      _______, _______, KC_MPRV, KC_MPLY, KC_MNXT, KC_VOLU,                                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
+      _______, KC_1, 	   KC_2,    KC_3,    KC_4,    KC_5,                                         KC_6, KC_7,    KC_8,   KC_9,    KC_0,    _______,
+      _______, _______, _______, KC_MPLY, KC_MPRV, KC_MNXT,                                     KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, _______, _______,
       _______, _______, _______, _______, KC_MUTE, KC_VOLD, _______, _______, _______, _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
@@ -166,13 +166,13 @@ static void render_status(void) {
     oled_write_P(PSTR("Layer: "), false);
     switch (get_highest_layer(layer_state)) {
         case _COLEMAK:
-            oled_write_P(PSTR("Default\n"), false);
+            oled_write_P(PSTR("Colemak\n"), false);
             break;
         case _LOWER:
-            oled_write_P(PSTR("Lower\n"), false);
+            oled_write_P(PSTR("Symbols\n"), false);
             break;
         case _RAISE:
-            oled_write_P(PSTR("Raise\n"), false);
+            oled_write_P(PSTR("Media\n"), false);
             break;
         case _ADJUST:
             oled_write_P(PSTR("Adjust\n"), false);
